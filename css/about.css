@@ -1,0 +1,490 @@
+/* ════════════════════════════════════════════════
+   Internly — About Page Styles
+   ════════════════════════════════════════════════ */
+
+/* ════════════════════════════════
+   ABOUT HERO
+   ════════════════════════════════ */
+.about-hero {
+  min-height: 55vh;
+  padding: 140px 5% 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(232,236,253,0.4) 0%, var(--surface) 100%);
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(74,101,239,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.about-hero-content {
+  max-width: 750px;
+  margin: 0 auto;
+  animation: rise-in 0.9s cubic-bezier(0.22,1,0.36,1) 0.1s both;
+}
+
+.about-hero-title {
+  font-family: 'Cairo', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
+}
+
+.about-hero-desc {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  line-height: 2;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* ════════════════════════════════
+   ABOUT SECTIONS (shared)
+   ════════════════════════════════ */
+.about-section {
+  padding: 90px 5%;
+  position: relative;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ════════════════════════════════
+   CRISIS SECTION
+   ════════════════════════════════ */
+.about-crisis {
+  background: var(--ink);
+  color: white;
+  overflow: hidden;
+}
+
+.about-crisis::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 50%; height: 100%;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.about-crisis::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 60px;
+  background: var(--surface);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+.about-crisis .section-title { color: white; }
+.about-crisis .section-sub { color: rgba(255,255,255,0.6); }
+
+.crisis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.crisis-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.crisis-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+.crisis-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.crisis-card p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+  line-height: 1.9;
+}
+
+.crisis-conclusion {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 2rem 2.5rem;
+  background: rgba(216,90,48,0.1);
+  border: 1px solid rgba(216,90,48,0.2);
+  border-radius: var(--radius);
+}
+
+.crisis-conclusion p {
+  color: rgba(255,255,255,0.85);
+  font-size: 1.1rem;
+  line-height: 1.9;
+}
+
+.crisis-conclusion strong {
+  color: var(--coral);
+}
+
+/* ════════════════════════════════
+   MISSION & VISION SECTION
+   ════════════════════════════════ */
+.about-mission {
+  background: var(--surface);
+}
+
+.about-mission::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 50px;
+  background: var(--surface-alt);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.mission-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-mid));
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.mission-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 48px rgba(74,101,239,0.15);
+  border-color: var(--accent-mid);
+}
+
+.mission-card-icon {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.mission-card h3 {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--accent-deep);
+  margin-bottom: 1rem;
+}
+
+.mission-card p {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.9;
+}
+
+/* ════════════════════════════════
+   ECOSYSTEM SECTION
+   ════════════════════════════════ */
+.about-ecosystem {
+  background: var(--surface-alt);
+}
+
+.about-ecosystem::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 50px;
+  background: white;
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+.ecosystem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.eco-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+}
+
+.eco-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 48px rgba(74,101,239,0.15);
+  border-color: var(--accent-mid);
+}
+
+.eco-num {
+  font-family: 'Cairo', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--accent-pale);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.eco-icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.eco-card h3 {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+}
+
+.eco-en {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent);
+  display: block;
+  margin-top: 0.2rem;
+}
+
+.eco-card p {
+  font-size: 0.93rem;
+  color: var(--ink-soft);
+  line-height: 1.9;
+}
+
+/* ════════════════════════════════
+   WHO WE SERVE SECTION
+   ════════════════════════════════ */
+.about-serve {
+  background: white;
+}
+
+.about-serve::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 50px;
+  background: var(--surface-alt);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+.serve-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.serve-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+}
+
+.serve-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(74,101,239,0.12);
+  border-color: var(--accent);
+}
+
+.serve-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 1.2rem;
+}
+
+.serve-icon {
+  font-size: 2rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--accent-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.serve-card h3 {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.serve-age {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.serve-card p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.95;
+  margin-bottom: 1.2rem;
+}
+
+.serve-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.serve-tag {
+  background: var(--accent-pale);
+  color: var(--accent-deep);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+/* ════════════════════════════════
+   COMMITMENT SECTION
+   ════════════════════════════════ */
+.about-commitment {
+  background: var(--surface-alt);
+}
+
+.about-commitment::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 50px;
+  background: var(--accent-deep);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+.commitment-card {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 3.5rem 3rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.22,1,0.36,1);
+}
+
+.commitment-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--gold), var(--coral));
+}
+
+.commitment-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(74,101,239,0.12);
+}
+
+.commitment-icon {
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
+}
+
+.commitment-card h2 {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
+}
+
+.commitment-card p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 2;
+}
+
+.commitment-card strong {
+  color: var(--accent-deep);
+}
+
+/* ════════════════════════════════
+   RESPONSIVE — About Page
+   ════════════════════════════════ */
+@media (max-width: 1100px) {
+  .ecosystem-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .crisis-grid,
+  .mission-grid,
+  .serve-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ecosystem-grid { grid-template-columns: 1fr; }
+
+  .about-hero {
+    min-height: 45vh;
+    padding-top: 120px;
+  }
+
+  .commitment-card {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero {
+    padding: 110px 4% 50px;
+  }
+
+  .about-hero-title {
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
+  }
+
+  .about-section {
+    padding: 60px 4%;
+  }
+
+  .commitment-card {
+    padding: 2rem 1.5rem;
+  }
+}
